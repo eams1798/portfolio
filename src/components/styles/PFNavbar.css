@@ -1,0 +1,154 @@
+.Navbar-container {
+  background-color: red;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  z-index: 1000;
+}
+
+.Navbar-logo {
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+.Navbar-logo {
+  color: white;
+  user-select: none;
+  cursor: default;
+}
+
+.Btn-show-sidebar {
+  margin: 0 15px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../images/menu.png");
+  background-size: cover;
+}
+
+.Dark-screen {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Dark-screen.opened {
+  display: block;
+  animation: 0.5s appear;
+}
+
+.Dark-screen.closed {
+  display: block;
+  animation: 0.75s vanish;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes appear {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes vanish {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  66.66% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.Sidebar {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  background-color: red;
+  z-index: 3000;
+  right: 0;
+}
+
+.Sidebar.opened {
+  display: flex;
+  flex-direction: column;
+  animation: 0.5s slidein;
+}
+
+.Sidebar.closed {
+  display: flex;
+  flex-direction: column;
+  animation: 0.75s slideout;
+}
+
+@keyframes slidein {
+  0% {
+    right: -100vw;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slideout {
+  0% {
+    right: 0;
+  }
+  66.66% {
+    right: -100vw;
+  }
+  100% {
+    right: -100vw;
+  }
+}
+
+.Btn-close {
+  margin-top: 15px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  /* border: 2px solid; */
+  font-size: 30px;
+  position: relative;
+  left: 81%;
+  top: -0.5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+@media screen and (min-width: 630px) {
+  .Navbar-logo {
+    color: white;
+  }
+
+  .Navbar-container {
+    justify-content: space-evenly;
+  }
+
+  .Btn-show-sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .Navbar-container {
+    justify-content: space-between;
+  }
+
+  .Btn-show-sidebar {
+    display: initial;
+  }
+}

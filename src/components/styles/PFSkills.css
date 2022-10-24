@@ -1,0 +1,93 @@
+.Skills-container {
+/*   background-color: burlywood; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Skills-container h1 {
+  text-align: center;
+}
+
+.Skills-container p {
+  font-size: 25px;
+  text-align: center;
+}
+
+.Skills-subcontainer {
+  width: 1200px;
+  max-width: 80%;
+}
+  
+.react-icon {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  box-shadow: 5px 5px 5px blue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#icon-javascript {
+  background-color: black;
+  border-radius: 5px;
+}
+
+#icon-typescript {
+  background-color: white;
+  border-radius: 5px;
+}
+
+#icon-clang, #icon-python, #icon-bash,
+#icon-javascript, #icon-flask, #icon-nginx,
+#icon-letsencrypt, #icon-node, #icon-typescript {
+  width: 80%;
+  height: 80%;
+} 
+
+.skill-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.skill-item {
+  margin: 10px 20px;
+}
+
+.skill-item::marker {
+  content: "";
+}
+
+.speech-bubble {
+  user-select: none;
+  position: relative;
+  background-color: beige;
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  min-width: 50px;
+  min-height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: beige transparent transparent transparent;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+}

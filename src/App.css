@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,25 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+html {
+  scroll-behavior: smooth;
+ }
+
+.About-container, .Contact-container, .Projects-container, .Skills-container {
+  min-height: 100vh;
+}
+
+.After-aside {
+  position: relative;
+  top: 50px;
+}
+
+.About-container, .Projects-container {
+  background-color: lightcoral;
+}
+
+.Skills-container, .Contact-container {
+  background-color: gray;
 }

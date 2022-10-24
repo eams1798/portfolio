@@ -1,0 +1,27 @@
+.Projects-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.Projects-container h1 {
+  text-align: center;
+}
+
+.pinned-repos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pinned-repo{
+  width: 300px;
+  max-width: 70%;
+}
+
+.pinned-repo p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

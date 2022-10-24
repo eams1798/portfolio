@@ -1,0 +1,25 @@
+.Contact-container {
+/*     background-color: green; */
+  }
+  
+.Contact-container, .Contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.Contact-form {
+  align-items: flex-start;
+}
+
+.Contact-container > h1, .Contact-form {
+  margin: 15px 0px;
+}
+
+.Contact-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

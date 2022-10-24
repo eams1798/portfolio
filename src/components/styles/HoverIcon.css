@@ -1,0 +1,17 @@
+/* .MainComponent {
+    position: absolute;
+} */
+
+.MainComponent, .HiddenComponentFloater {
+    display: flex;
+    justify-content: center;
+}
+
+.HiddenComponentFloater {
+    position: absolute;
+}
+
+.HiddenComponent {
+    position: relative;
+    top: -50px;
+}
