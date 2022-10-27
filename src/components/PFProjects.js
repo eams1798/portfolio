@@ -1,6 +1,6 @@
 import './styles/PFProjects.css';
 import { useState, useEffect } from 'react';
-/* import pinnedRepoList from '../functions/pinnedRepoList'; */
+import PinnedRepo from './PinnedRepo';
 
 const PFProjects = () => {
   const [pinnedRepos, setPinnedRepos] = useState([]);
@@ -35,12 +35,7 @@ const PFProjects = () => {
         <h1>My featured projects</h1>
         <div className="pinned-repos">
           {pinnedRepos.map( (repo, index) => (
-            <div className="pinned-repo" key={index}>
-              <h3>Name: {repo.repo}</h3>
-              <p>Description: {repo.description}</p>
-              <p>Link: {repo.link}</p>
-          {/* <img src={repo.image}></img> */}
-            </div>
+            <PinnedRepo repo={repo} key={index} />
           ))}
         </div>
         </>

@@ -1,5 +1,5 @@
-/* import logo from './logo.svg'; */
 import './App.css';
+import {BsGithub} from 'react-icons/bs';
 import PFNavbar from './components/PFNavbar'
 import PFAbout from './components/PFAbout'
 import PFSkills from './components/PFSkills'
@@ -27,6 +27,12 @@ function App() {
           <PFContact />
         </div>
       </header>
+      <footer className="App-footer">
+        <p>Repo of the portfolio:</p>
+        <a href="https://github.com/eams1798/portfolio" target="_blank" rel="noreferrer">
+            <BsGithub id="link-repo-icon" />
+        </a>
+      </footer>
     </div>
   );
 }

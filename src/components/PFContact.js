@@ -10,7 +10,8 @@ const PFContact = () => {
         <label htmlFor="name" className="Contact-label">Name</label>
         <input type="text" id="name" name="name" className="Contact-input" placeholder="put your name here" />
         <label htmlFor="message" className="Contact-label">Message</label>
-        <input type="text" id="message" name="message" className="Contact-input" placeholder="put your message here" />
+        <textarea id="message" name="message" className="Contact-input" placeholder="put your message here" />
+        {/* <input type="text" id="message" name="message" className="Contact-input" placeholder="put your message here" /> */}
         <div className="Contact-button-container">
           <button className="Contact-button" type="submit">Send</button>
         </div>

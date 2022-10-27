@@ -14,11 +14,13 @@
 .Skills-container p {
   font-size: 25px;
   text-align: center;
+  margin-top: 8px;
 }
 
 .Skills-subcontainer {
   width: 1200px;
   max-width: 80%;
+  margin: 15px 0;
 }
   
 .react-icon {
@@ -54,10 +56,11 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  margin: 5px 0;
 }
 
 .skill-item {
-  margin: 10px 20px;
+  margin: 15px 20px;
 }
 
 .skill-item::marker {

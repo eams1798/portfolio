@@ -6,22 +6,15 @@
 }
 
 .Projects-container h1 {
+  width: 100%;
   text-align: center;
 }
 
 .pinned-repos {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.pinned-repo{
-  width: 300px;
-  max-width: 70%;
-}
-
-.pinned-repo p{
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 20px 0px;
 }

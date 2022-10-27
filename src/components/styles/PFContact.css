@@ -12,6 +12,9 @@
 
 .Contact-form {
   align-items: flex-start;
+  color: white;
+  width: 500px;
+  max-width: 90%;
 }
 
 .Contact-container > h1, .Contact-form {
@@ -22,4 +25,35 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.Contact-button {
+  margin-top: 30px;
+  font-size: 20px;
+  width: 75px;
+  height: 38px;
+}
+
+textarea {
+  font-family: inherit;
+  resize: none;
+  font-size: 25px;
+  width: 100%;
+  height: 100px;
+}
+
+input {
+  margin-bottom: 30px;
+  font-size: 25px;
+  width: 100%;
+}
+
+input, textarea {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 15px;
+  font-size: 25px;
 }
