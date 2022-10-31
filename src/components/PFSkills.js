@@ -5,14 +5,16 @@ import {FaNodeJs} from 'react-icons/fa';
 import CIcon from '../other_icons/c.png';
 import PyIcon from '../other_icons/python.png';
 import HoverIcon from './HoverIcon';
+import { useTranslation } from 'react-i18next';
 
 const PFSkills = () => {
+  const [ tS, ] = useTranslation("Skills");
   return (
     <div id="Skills" className="Skills-container">
-      <h1>Skills</h1>
-      <p>I have knowledge at:</p>
+      <h1 className="text-color2">{tS("skills")}</h1>
+      <p className="text-color2">{tS("i-know")}</p>
       <div className="Skills-subcontainer">
-        <h2>Languages:</h2>
+        <h2 className="text-color2">{tS("langs")}</h2>
           <ul className="skill-list">
             <li className="skill-item">
               <HoverIcon
@@ -22,7 +24,7 @@ const PFSkills = () => {
                   id="icon-html"
                   color="orange" />
               }
-                HiddenComponent={<div className="speech-bubble">HTML</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">HTML</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -32,7 +34,7 @@ const PFSkills = () => {
                   id="icon-css"
                   color="blue" />
               }
-                HiddenComponent={<div className="speech-bubble">CSS</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">CSS</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -43,7 +45,7 @@ const PFSkills = () => {
                       color="yellow"/>
                   </div>
                 }
-                  HiddenComponent={<div className="speech-bubble">JavaScript</div>} />
+                  HiddenComponent={<div className="speech-bubble text-color2">JavaScript</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -55,7 +57,7 @@ const PFSkills = () => {
                       alt="clang" />
                   </div>
                 }
-                  HiddenComponent={<div className="speech-bubble">C Programming language</div>} />
+                  HiddenComponent={<div className="speech-bubble text-color2">{tS("c")}</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -67,7 +69,7 @@ const PFSkills = () => {
                       alt="python" />
                   </div>
                 }
-                  HiddenComponent={<div className="speech-bubble">Python</div>} />
+                  HiddenComponent={<div className="speech-bubble text-color2">Python</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -77,7 +79,7 @@ const PFSkills = () => {
                     id="icon-mysql"
                     color="rgb(1, 97, 138)" />
                 }
-                  HiddenComponent={<div className="speech-bubble">MySQL</div>} />
+                  HiddenComponent={<div className="speech-bubble text-color2">MySQL</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -87,12 +89,12 @@ const PFSkills = () => {
                       id="icon-bash" />
                   </div>
                 }
-                  HiddenComponent={<div className="speech-bubble">Bash</div>} />
+                  HiddenComponent={<div className="speech-bubble text-color2">Bash</div>} />
             </li>
           </ul>
       </div>
       <div className="Skills-subcontainer">
-        <h2>Frameworks and Libraries:</h2>
+        <h2 className="text-color2">{tS("framelib")}</h2>
           <ul className="skill-list">
             <li className="skill-item">
               <HoverIcon
@@ -102,7 +104,7 @@ const PFSkills = () => {
                     id="icon-jquery"
                     color='rgb(1, 97, 138)'/>
                 }
-                HiddenComponent={<div className="speech-bubble">JQuery (JavaScript)</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">JQuery (JavaScript)</div>} />
               </li>
             <li className="skill-item">
               <HoverIcon
@@ -112,7 +114,7 @@ const PFSkills = () => {
                   id="icon-react"
                   color='rgb(0, 218, 249)'/>
               }
-                HiddenComponent={<div className="speech-bubble">React (JavaScript)</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">React (JavaScript)</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -122,12 +124,12 @@ const PFSkills = () => {
                       id="icon-flask" />
                   </div>
                 }
-                HiddenComponent={<div className="speech-bubble">Flask (Python)</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">Flask (Python)</div>} />
             </li>
           </ul>
       </div>
       <div className="Skills-subcontainer">
-        <h2>Deploy:</h2>
+        <h2 className="text-color2">{tS("deploy")}</h2>
         <ul className="skill-list">
           <li className="skill-item">
             <HoverIcon
@@ -138,7 +140,7 @@ const PFSkills = () => {
                   color='rgb(0, 150, 57)'/>
               </div>
             }
-              HiddenComponent={<div className="speech-bubble">NGINX</div>} />
+              HiddenComponent={<div className="speech-bubble text-color2">NGINX</div>} />
           </li>
           <li className="skill-item">
             <HoverIcon
@@ -149,12 +151,12 @@ const PFSkills = () => {
                   color='rgb(17, 58, 114)'/>
               </div>
             }
-              HiddenComponent={<div className="speech-bubble">Let's encrypt</div>} />
+              HiddenComponent={<div className="speech-bubble text-color2">Let's encrypt</div>} />
           </li>
         </ul>
       </div>
       <div className="Skills-subcontainer">
-        <h2>Other resources:</h2>
+        <h2 className="text-color2">{tS("other")}</h2>
           <ul className="skill-list">
             <li className="skill-item">
               <HoverIcon
@@ -165,7 +167,7 @@ const PFSkills = () => {
                     color='rgb(104, 159, 99)'/>
                 </div>
               }
-                HiddenComponent={<div className="speech-bubble">node.js</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">node.js</div>} />
             </li>
             <li className="skill-item">
               <HoverIcon
@@ -176,7 +178,7 @@ const PFSkills = () => {
                     color='rgb(49, 120, 198)'/>
                 </div>
               }
-                HiddenComponent={<div className="speech-bubble">Typescript</div>} />
+                HiddenComponent={<div className="speech-bubble text-color2">Typescript</div>} />
             </li>
           </ul>
       </div>

@@ -1,7 +1,3 @@
-.Contact-container {
-/*     background-color: green; */
-  }
-  
 .Contact-container, .Contact-form {
   display: flex;
   flex-direction: column;
@@ -30,8 +26,15 @@
 .Contact-button {
   margin-top: 30px;
   font-size: 20px;
-  width: 75px;
-  height: 38px;
+  width: 85px;
+  height: 45px;
+  background-color: #2a2a2a;
+  color: #e9e9e9;
+  border-radius: 10px
+}
+
+.Contact-button:focus, .Contact-button:active {
+  background-color: #666666;
 }
 
 textarea {
@@ -42,18 +45,26 @@ textarea {
   height: 100px;
 }
 
-input {
+.Contact-form input {
   margin-bottom: 30px;
   font-size: 25px;
   width: 100%;
 }
 
-input, textarea {
+.Contact-form input, textarea {
   padding: 5px;
   box-sizing: border-box;
+  background-color: #2a2a2a;
+  color: #e9e9e9;
 }
 
-label {
+.Contact-form label {
   margin-bottom: 15px;
   font-size: 25px;
+}
+
+input:invalid:focus-visible,
+textarea:invalid:focus-visible {
+  outline: none;
+  border: 2px solid red;
 }

@@ -42,7 +42,7 @@
   margin: 0 15px;
 }
 
-.links-social a:visited {
+a:visited {
   all: unset;
 }
 

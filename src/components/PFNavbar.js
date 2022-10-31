@@ -1,5 +1,6 @@
 import './styles/PFNavbar.css';
 import NavbarList from './NavbarList';
+
 import { useState } from 'react';
 
 const PFNavbar = ({logo, items}) => {

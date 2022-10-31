@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './styles/PinnedRepo.css';
+import { useTranslation } from 'react-i18next';
 
 const PinnedRepo = ({repo}) => {
   const [repoStatus, setRepoStatus] = useState('');
+  const [tP, ] = useTranslation("Projects");
   const closeRepo = () => {
     setRepoStatus('closed');
     setTimeout(() => {
@@ -19,7 +21,7 @@ const PinnedRepo = ({repo}) => {
           setRepoStatus('opened');
         }} >
         <div className="pinned-repo-title">
-          <h4>{repo.repo}</h4>
+          <h4 className="text-color2">{repo.repo}</h4>
         </div>
       </div>
       <div
@@ -28,9 +30,9 @@ const PinnedRepo = ({repo}) => {
       <div className={`pinned-repo-info ${repoStatus}`.trim()} >
         <div className={`pinned-repo ${repoStatus}`} id={`repo-${repo.repo}`} />
         <div className="repo-data">
-          <h2>{repo.repo}</h2>
-          <p><strong>Description:</strong> {repo.description ? repo.description : 'None'}</p>
-          <p><strong>Link:</strong> <a
+          <h2 className="text-color2">{repo.repo}</h2>
+          <p className="text-color2"><strong>{tP("description")}</strong> {repo.description ? repo.description : 'None'}</p>
+          <p className="text-color2"><strong>{tP("link")}</strong> <a
               href={repo.link ? repo.link : '#'}
               target="_blank" rel="noreferrer">{repo.link ? repo.link : 'None'}
             </a>

@@ -1,11 +1,13 @@
 import './styles/PFProjects.css';
 import { useState, useEffect } from 'react';
 import PinnedRepo from './PinnedRepo';
+import { useTranslation } from 'react-i18next';
 
 const PFProjects = () => {
   const [pinnedRepos, setPinnedRepos] = useState([]);
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState();
+  const [tP, ] = useTranslation("Projects");
 
   useEffect(() => {
     setStatus('loading');
@@ -32,7 +34,7 @@ const PFProjects = () => {
       ) :
       (
         <>
-        <h1>My featured projects</h1>
+        <h1 className="text-color1">{tP("projects")}</h1>
         <div className="pinned-repos">
           {pinnedRepos.map( (repo, index) => (
             <PinnedRepo repo={repo} key={index} />

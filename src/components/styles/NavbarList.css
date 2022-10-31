@@ -16,17 +16,21 @@
 }
 
 .Navbar-button {
-  margin: 10px 30px;
-  font-size: 20px;
+  margin: 0px 15px;
+  font-size: 18px;
 }
 
-  @media screen and (min-width: 630px) {
+.Navbar-list.column .Navbar-button {
+  margin: 10px 0px;
+}
+
+  @media screen and (min-width: 761px) {
     .Navbar-list.row {
       display: flex;
     }
   }
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 760px) {
     .Navbar-list.row {
       display: none;
     }
