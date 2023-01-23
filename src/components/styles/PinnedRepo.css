@@ -1,0 +1,174 @@
+.pinned-repo {
+    width: 300px;
+    max-width: 70%;
+    height: 175px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin: 10px;
+    position: relative;
+    z-index: 900;
+  }
+  
+  .pinned-repo-title {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 150px;
+    max-height: 0px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.4990371148459384) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1); 
+    overflow: hidden;
+  }
+  
+  .pinned-repo:hover .pinned-repo-title {
+  max-height: 75px;
+  }
+  
+  .pinned-repo-title, .pinned-repo-title h4 {
+    user-select: none;
+  }
+  
+  .pinned-repo-title h4 {
+    max-width: 90%;
+    word-wrap: break-word;
+  }
+  
+  #repo-world-cup-score-simulator {
+    background-image: url("../../images/projects/world-cup-score-simulator.png");
+  }
+  
+  #repo-Fix_My_Code_Challenge {
+    background-image: url("../../images/projects/Fix_My_Code_Challenge.png");
+  }
+  
+  #repo-AirBnB_clone_v4 {
+    background-image: url("../../images/projects/AirBnB_clone_v4.png");
+  }
+  
+  #repo-clubhotelcusco_cotizaciones {
+    background-image: url("../../images/projects/clubhotelcusco_cotizaciones.png");
+  }
+  
+  #repo-holberton-system_engineering-devops {
+    background-image: url("../../images/projects/holberton-system_engineering-devops.png");
+  }
+  
+  #repo-holbertonschool-low_level_programming {
+    background-image: url("../../images/projects/holbertonschool-low_level_programming.png");
+  }
+  
+  .pinned-repo img {
+    position: absolute;
+    width: 300px;
+    height: 175px;
+  }
+  
+  .pinned-repo p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .darkscreenrepo {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .darkscreenrepo.opened {
+    display: flex;
+    animation: 0.5s appear;
+  }
+  
+  .darkscreenrepo.closed {
+    display: flex;
+    animation: 0.75s vanish;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .pinned-repo-info {
+      display: none;
+      border-radius: 10px;
+      width: 600px;
+      max-width: 90vw;
+      height: auto;
+      background-color: #2a2a2a;
+      position: fixed;
+      top: 25%;
+      z-index: 2000;
+  }
+
+  .pinned-repo-info.opened {
+    display: flex;
+    align-items: center;
+    animation: 0.5s appearRepo;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pinned-repo-info.closed {
+    display: flex;
+    align-items: center;
+    animation: 0.75s vanishRepo;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @keyframes appearRepo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes vanishRepo {
+    0% {
+        opacity: 1;
+    }
+    66.66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+
+@media (max-width: 646px) {
+  .repo-data {
+    width: 90%;
+  }
+}
+
+@media (min-width: 647px) {
+  .repo-data {
+    width: 45%;
+  }
+}
+
+.repo-data h2 {
+  text-align: center;
+}
+
+.repo-data p, .repo-data h2 {
+    margin: 8px 0px;
+/*     max-width: 98%; */
+    word-wrap: break-word;
+}

@@ -1,0 +1,10 @@
+{
+    "contact": "Contacto",
+    "name": "Nombre",
+    "name-placeholder": "coloca tu nombre aquí",
+    "message": "Mensaje",
+    "message-placeholder": "coloca tu mensaje aquí",
+    "send": "Enviar",
+    "success-message": "Se envió el mensaje exitosamente",
+    "error-message": "Faltan datos"
+}

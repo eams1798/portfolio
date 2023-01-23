@@ -1,0 +1,38 @@
+.Navbar-list li {
+  all: unset;
+}
+  
+.Navbar-list li a {
+  all: unset;
+}
+
+.Navbar-list {
+  color: white;
+  user-select: none;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Navbar-button {
+  margin: 0px 15px;
+  font-size: 18px;
+}
+
+.Navbar-list.column .Navbar-button {
+  margin: 10px 0px;
+}
+
+  @media screen and (min-width: 761px) {
+    .Navbar-list.row {
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    .Navbar-list.row {
+      display: none;
+    }
+  }
+  

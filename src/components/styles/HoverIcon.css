@@ -1,0 +1,17 @@
+/* .defaultIcon {
+    position: absolute;
+} */
+
+.defaultIcon, .onHoverIconFloater {
+    display: flex;
+    justify-content: center;
+}
+
+.onHoverIconFloater {
+    position: absolute;
+}
+
+.onHoverIcon {
+    position: relative;
+    top: -50px;
+}

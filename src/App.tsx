@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import { Suspense } from 'react';
+import { BsGithub } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
+import PFNavbar from './components/PFNavbar';
+import PFAbout from './components/PFAbout';
+import PFSkills from './components/PFSkills';
+import PFProjects from './components/PFProjects';
+import PFContact from './components/PFContact';
 
-function App() {
-  const [count, setCount] = useState(0)
+
+function SuspensedApp() {
+  const [ tF, ] = useTranslation("Footer");
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+      <header className="App-header">
+        <aside className="App-navbar">
+          <PFNavbar
+            logo={"<misotideas />"}
+            items={[{
+              title: 'About',
+              link: '#About',
+            }, {
+              title: 'Skills',
+              link: '#Skills',
+            }, {
+              title: 'Projects',
+              link: '#Projects',
+            }, {
+              title: 'Contact',
+              link: '#Contact',
+            }]}/>
+        </aside>
+        <div className="After-aside">
+          <PFAbout />
+          <PFSkills />
+          <PFProjects />
+          <PFContact />
+        </div>
+      </header>
+      <footer className="App-footer">
+        <p className='text-color2'>{tF("repo-portfolio")}</p>
+        <a href="https://github.com/eams1798/portfolio" target="_blank" rel="noreferrer">
+            <BsGithub id="link-repo-icon" color="white" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Suspense fallback="loading dependencies">
+      <SuspensedApp />
+    </Suspense>
+  );
+}
+
+export default App;
