@@ -22,8 +22,8 @@
   text-align: center;
 }
 
-.description p, .my-social-media p {
-  font-size: 25px;
+.description p, .my-social-media p, .resume p {
+  font-size: 20px;
   /* margin-top: 10px; */
   text-align: center;
 }
@@ -46,8 +46,13 @@ a:visited {
   all: unset;
 }
 
-.description p, .description-title, .my-social-media p, .links-social {
+.description p, .description-title, .resume p, .my-social-media p, .links-social {
   margin: 15px 0;
+  line-height: 120%;
+}
+
+.resume p {
+  margin: 0;
 }
 
 #icon-github, #icon-linkedin/* , #icon-medium */ {

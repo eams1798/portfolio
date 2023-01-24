@@ -8,12 +8,14 @@ const PFSkills = () => {
   return (
     <div id="Skills" className="Skills-container">
       <h1 className="text-color2">{tS("skills")}</h1>
-      {dataSkills.map(({groupName, skills}) => (
-        <SkillGroup
-          key={groupName}
-          title={groupName}
-          skills={skills}/>
-      ))}
+      <div className="Skillgroup-container">
+        {dataSkills.map(({groupName, skills}) => (
+          <SkillGroup
+            key={groupName}
+            title={groupName}
+            skills={skills}/>
+        ))}
+      </div>
     </div>
   );
 }

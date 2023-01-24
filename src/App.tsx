@@ -41,7 +41,7 @@ function SuspensedApp() {
       </header>
       <footer className="App-footer">
         <p className='text-color2'>{tF("repo-portfolio")}</p>
-        <a href="https://github.com/eams1798/portfolio" target="_blank" rel="noreferrer">
+        <a href="https://github.com/eams1798/portfolio/tree/portfolio-ts" target="_blank" rel="noreferrer">
             <BsGithub id="link-repo-icon" color="white" />
         </a>
       </footer>

@@ -15,7 +15,7 @@ const SpeechBubble = ({name}: {name: string}) => {
 
 const dataSkills: SkillGroupType[] = [
   {
-    groupName: 'langs',
+    groupName: 'Front-end',
     skills: [
       {
         defaultIcon:
@@ -48,6 +48,39 @@ const dataSkills: SkillGroupType[] = [
       }, {
         defaultIcon:
           <div className="react-icon">
+            <SiTypescript
+              id="icon-typescript"
+              color='rgb(49, 120, 198)'/>
+          </div>,
+        onHoverIcon:
+          <SpeechBubble
+            name="Typescript" />
+      }, {
+        defaultIcon:
+          <DiJqueryLogo
+            className="react-icon"
+            id="icon-jquery"
+            color='rgb(1, 97, 138)'/>,
+        onHoverIcon:
+          <SpeechBubble
+            name="JQuery (JavaScript)" />
+      }, {
+        defaultIcon:
+          <DiReact
+            className="react-icon"
+            id="icon-react"
+            color='rgb(0, 218, 249)'/>,
+        onHoverIcon:
+          <SpeechBubble
+            name="React (JavaScript)" />
+      }
+    ]
+  }, {
+    groupName: 'Back-end',
+    skills: [
+      {
+        defaultIcon:
+          <div className="react-icon">
             <img
               id="icon-clang"
               src={CIcon}
@@ -69,6 +102,26 @@ const dataSkills: SkillGroupType[] = [
             name="Python" />
       }, {
         defaultIcon:
+          <div className="react-icon">
+            <SiFlask
+              id="icon-flask"
+              color='black' />
+          </div>,
+        onHoverIcon:
+          <SpeechBubble
+            name="Flask (Python)" />
+      }, {
+        defaultIcon:
+          <div className="react-icon">
+            <FaNodeJs
+              id="icon-node"
+              color='rgb(104, 159, 99)'/>
+          </div>,
+        onHoverIcon:
+          <SpeechBubble
+            name="node.js" />
+      }, {
+        defaultIcon:
           <DiMysql
             className="react-icon"
             id="icon-mysql"
@@ -76,52 +129,22 @@ const dataSkills: SkillGroupType[] = [
         onHoverIcon:
           <SpeechBubble
             name="MySQL" />
-      }, {
+      }
+    ]
+  }, {
+    groupName: 'web-infra',
+    skills: [
+      {
         defaultIcon:
           <div className="react-icon">
             <SiGnubash
-              id="icon-bash" />
+              id="icon-bash"
+              color="black" />
           </div>,
         onHoverIcon:
           <SpeechBubble
             name="Bash" />
-      }
-    ]
-  }, {
-    groupName: 'framelib',
-    skills: [
-      {
-        defaultIcon:
-          <DiJqueryLogo
-            className="react-icon"
-            id="icon-jquery"
-            color='rgb(1, 97, 138)'/>,
-        onHoverIcon:
-          <SpeechBubble
-            name="JQuery (JavaScript)" />
-      }, {
-        defaultIcon:
-          <DiReact
-            className="react-icon"
-            id="icon-react"
-            color='rgb(0, 218, 249)'/>,
-        onHoverIcon:
-          <SpeechBubble
-            name="React (JavaScript)" />
-      }, {
-        defaultIcon:
-          <div className="react-icon">
-            <SiFlask
-              id="icon-flask" />
-          </div>,
-        onHoverIcon:
-          <SpeechBubble
-            name="Flask (Python)" />
-      }
-    ]
-  }, {
-    groupName: 'deploy',
-    skills: [
+      },
       {
         defaultIcon:
           <div className="react-icon">
@@ -142,31 +165,6 @@ const dataSkills: SkillGroupType[] = [
         onHoverIcon:
           <SpeechBubble
             name="Let's encrypt" />
-      }
-    ]
-  }, {
-    groupName: 'other',
-    skills: [
-      {
-        defaultIcon:
-          <div className="react-icon">
-            <FaNodeJs
-              id="icon-node"
-              color='rgb(104, 159, 99)'/>
-          </div>,
-        onHoverIcon:
-          <SpeechBubble
-            name="node.js" />
-      }, {
-        defaultIcon:
-          <div className="react-icon">
-            <SiTypescript
-              id="icon-typescript"
-              color='rgb(49, 120, 198)'/>
-          </div>,
-        onHoverIcon:
-          <SpeechBubble
-            name="Typescript" />
       }, {
         defaultIcon:
           <div className="react-icon">
