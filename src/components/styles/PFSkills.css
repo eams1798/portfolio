@@ -26,12 +26,15 @@
 }
 
 .Skills-subcontainer {
-  width: 1200px;
   margin: 15px 25px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  border: 5px solid white;
+  border-radius: 20px;
+  background-color: black;
+  box-sizing: border-box;
 }
 
 @media (min-width: 700px) {
@@ -53,8 +56,9 @@
 }
 
 .Skills-subcontainer h2 {
-  margin: 2em 0 .75em 0;
+  margin: 1.8em 0 .6em 0;
   text-align: center;
+  width: 90%;
 }
   
 .react-icon {
@@ -92,7 +96,7 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 5px 0;
+  margin: 5px 0 35px 0;
 }
 
 .skill-item {

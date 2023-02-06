@@ -1,5 +1,7 @@
 {
     "hello-name": "Hello! I'm {{name}}",
-    "my-description": "Software engineer, specialized in web development. Although I have had very little work experience in the field, I have been dedicating my free time to learn and practice different programming languages and web technologies, both front-end and back-end. I consider myself a proactive person, with teamwork skills and a great ability to adapt to change. I am excited to continue my training and development in the web development field and I am sure I can contribute with my skills and knowledge in any project I can participate in. My other hobbies are playing video games, watching soccer, spending time with my family, and seeing new places.",
+    "my-description": "Software engineer, specialized in web development. I dedicate my available time to learn and practice different programming languages and web technologies, both front-end and back-end. I consider myself a proactive person, with teamwork skills and a great ability to adapt to changes. I am excited to continue my education in the web development field and I am confident that I can contribute my skills and knowledge to any project I can be involved in. My other hobbies are playing video games, watching soccer, spending time with family, and seeing new places.",
+    "my-resume": "See my resume",
+    "here": "here",
     "find-me": "You can find me here:"
 }

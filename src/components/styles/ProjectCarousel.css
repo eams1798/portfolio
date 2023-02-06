@@ -1,0 +1,157 @@
+.carousel-container {
+  height: 350px;
+  width: 800px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media screen and (max-width: 888.89px) {
+  .carousel-container {
+    max-height: 350px;
+    height: calc(90vw * (350/800));
+  }
+}
+
+.slider-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.gradient-dark {
+  position: absolute;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0.4990371148459384) 0%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.7) 100%);
+  height: 350px;
+  z-index: 300;
+}
+
+@media screen and (max-width: 888.89px) {
+  .gradient-dark {
+    max-height: 350px;
+    height: calc(90vw * (350/800));
+  }
+}
+
+.slider {
+  width: 3150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.btn-prev, .btn-next {
+  all: unset;
+  display: flex;
+  border-radius: 50%;
+  color: rgb(27, 27, 27);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 20%;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider.move-left {
+  animation: 0.5s moveleft;
+}
+
+@media screen and (max-width: 888.89px) {
+  .slider.move-left {
+    animation: 0.5s moveleft-resp;
+  }
+}
+
+@keyframes moveleft {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 630px;
+  }
+}
+
+@keyframes moveleft-resp {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: calc(90vw * (350/800) * (600 / 350) + 30px);
+  }
+}
+
+.slider.move-right {
+  animation: 0.5s moveright;
+}
+
+@media screen and (max-width: 888.89px) {
+  .slider.move-right {
+    animation: 0.5s moveright-resp;
+  }
+}
+
+@keyframes moveright {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 630px;
+  }
+}
+
+@keyframes moveright-resp {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: calc(90vw * (350/800) * (600 / 350) + 30px);
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 15px;
+}
+
+.image-container img {
+  height: 350px;
+  width: 600px;
+}
+
+.slider-container {
+  border-radius: 30px;
+}
+
+.gradient-dark {
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 888.89px) {
+  .image-container img {
+    height: calc(90vw * (350/800));
+    width: calc(90vw * (350/800) * (600 / 350));
+  }
+}
+
+.repo-data {
+  width: 600px;
+  max-width: 90vw;
+}
+
+.repo-data p, .repo-data h2 {
+    margin: 8px 0px;
+    overflow-wrap: break-word;
+    text-align: center;
+}

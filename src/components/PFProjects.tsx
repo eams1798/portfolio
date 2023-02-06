@@ -1,7 +1,8 @@
 import './styles/PFProjects.css';
 import { useState, useEffect } from 'react';
-import PinnedRepo from './PinnedRepo';
 import { useTranslation } from 'react-i18next';
+import ProjectCarousel from './ProjectCarousel';
+import { dataProjects } from '../data/dataProjects';
 
 const PFProjects = () => {
   const [pinnedRepos, setPinnedRepos] = useState([]);
@@ -35,11 +36,7 @@ const PFProjects = () => {
       (
         <>
         <h1 className="text-color1">{tP("projects")}</h1>
-        <div className="pinned-repos">
-          {pinnedRepos.map( (repo, index) => (
-            <PinnedRepo repo={repo} key={index} />
-          ))}
-        </div>
+        <ProjectCarousel images={dataProjects} path={'./src/images/projects'} repos={pinnedRepos}/>
         </>
       ))
     }

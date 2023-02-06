@@ -4,7 +4,7 @@ html {
 
 .About-container, .Contact-container, .Projects-container, .Skills-container {
   min-height: 100vh;
-  padding: 50px;
+  padding: 25px;
 }
 
 .After-aside {

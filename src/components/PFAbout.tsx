@@ -17,7 +17,7 @@ const PFAbout = () => {
         </p> 
       </div>
       <div className="resume">
-        <p>See my resume <a href={resume} target="_blank" rel="noreferrer"><u>here</u></a>.</p>
+        <p>{tA("my-resume")} <a href={resume} target="_blank" rel="noreferrer"><u>{tA("here")}</u></a>.</p>
       </div>
       <div className="my-social-media">
         <p className='text-color1'>{tA("find-me")}</p>
