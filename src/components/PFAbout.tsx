@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import dataSocialLinks from '../data/dataSocialLinks';
 import SocialLink from './SocialLink';
 import resume from "../data/Estefano_Misme_Resume.pdf";
+import dataContact from '../data/dataContact';
 
 
 const PFAbout = () => {
@@ -18,6 +19,14 @@ const PFAbout = () => {
       </div>
       <div className="resume">
         <p>{tA("my-resume")} <a href={resume} target="_blank" rel="noreferrer"><u>{tA("here")}</u></a>.</p>
+      </div>
+      <div className='my-contact-info'>
+        <p className='text-color1'>{tA("contact-me")}</p>
+        <div className="links-contact">
+          {dataContact.map(({keyName, url, icon}) => (
+            <SocialLink key={keyName} url={url} icon={icon}/>
+          )) }
+        </div>
       </div>
       <div className="my-social-media">
         <p className='text-color1'>{tA("find-me")}</p>

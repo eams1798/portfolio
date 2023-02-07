@@ -34,11 +34,18 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
     e.preventDefault();
     setSliderMoveClass('move-left');
     setTimeout(() => {
-      const newArrImg = currentArrayImg.map((__img__, idx, arr) => (
-        idx > 0 ? arr[idx - 1] : arr[arr.length - 1]
-      ) );
+      let currentIndex = images.indexOf(currentArrayImg[2]);
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+      const newArrayImg = [
+        images[(currentIndex - 2 + images.length) % images.length],
+        images[(currentIndex - 1 + images.length) % images.length],
+        images[currentIndex],
+        images[(currentIndex + 1) % images.length],
+        images[(currentIndex + 2) % images.length]
+      ];
       const newCurrentRepo = repos.find(repo => repo.repo === currentArrayImg[2].split('.')[0]);
-      setCurrentArrayImg(newArrImg);
+      setCurrentArrayImg(newArrayImg);
       setCurrentRepo(newCurrentRepo? newCurrentRepo: defaultCurrentRepo);
       setSliderMoveClass('');
     }, 490);
@@ -47,11 +54,18 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
     e.preventDefault();
     setSliderMoveClass('move-right');
     setTimeout(() => {
-      const newArrImg = currentArrayImg.map((__img__, idx, arr) => (
-        idx < arr.length - 1 ? arr[idx + 1] : arr[0]
-      ) );
+      let currentIndex = images.indexOf(currentArrayImg[2]);
+      currentIndex = (currentIndex + 1 + images.length) % images.length;
+    
+      const newArrayImg = [
+        images[(currentIndex - 2 + images.length) % images.length],
+        images[(currentIndex - 1 + images.length) % images.length],
+        images[currentIndex],
+        images[(currentIndex + 1) % images.length],
+        images[(currentIndex + 2) % images.length]
+      ];
       const newCurrentRepo = repos.find(repo => repo.repo === currentArrayImg[2].split('.')[0]);
-      setCurrentArrayImg(newArrImg);
+      setCurrentArrayImg(newArrayImg);
       setCurrentRepo(newCurrentRepo? newCurrentRepo: defaultCurrentRepo)
       setSliderMoveClass('');
 

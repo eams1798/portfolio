@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.description p, .my-social-media p, .resume p {
+.description p, .my-social-media p, .my-contact-info p, .resume p {
   font-size: 20px;
   /* margin-top: 10px; */
   text-align: center;
@@ -46,13 +46,16 @@ a:visited {
   all: unset;
 }
 
-.description p, .description-title, .resume p, .my-social-media p, .links-social {
+.description p, .description-title, .resume p, .my-social-media p, .links-social, .links-contact {
   margin: 15px 0;
   line-height: 120%;
 }
 
-.resume p {
-  margin: 0;
+.links-contact, .links-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #icon-github, #icon-linkedin/* , #icon-medium */ {
@@ -67,6 +70,11 @@ a:visited {
   border-radius: 8%;
 }
 
-/* #icon-medium {
-  border-radius: 20px;
-} */
+#icon-gmail {
+  width: 80%;
+  height: 80%;
+} 
+
+#gmail-icon-container {
+  background: rgba(0, 0, 0, 0);
+}
