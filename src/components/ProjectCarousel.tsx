@@ -5,11 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 interface CarouselProps {
     images: string[];
-    path: string;
     repos: Repo[];
   }
 
-const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
+const ProjectCarousel = ({images, repos}: CarouselProps) => {
   const [tP] = useTranslation('Projects');
 
   const [currentArrayImg, setCurrentArrayImg] = useState<string[]>([
@@ -30,12 +29,32 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
     };
   const [currentRepo, setCurrentRepo] = useState<Repo>(defaultCurrentRepo);
 
-  const handleBtnLeft = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setSliderMoveClass('move-left');
+  const parsePathtoImageName = (path: string) => {
+    let currentImageName: string | string[] = path.split('.')[0].split('/');
+        currentImageName = currentImageName[currentImageName.length - 1];
+
+        /* for production environment, the images will get an additional hash code in its name,
+        so we need to remove this with the following code: */
+        /* currentImageName = currentImageName.split('.')[0].split('-');
+        let result = '';
+        currentImageName.forEach((currval, index) => {
+          if (currval !== currentImageName[currentImageName.length - 1]) {
+            result += '-' + currval;
+          }
+        });
+        currentImageName = result.slice(1); */
+
+    return currentImageName;
+  };
+
+  const moveCarousel = (direction: string) => {
+    setSliderMoveClass(`move-${direction}`);
     setTimeout(() => {
+      let movingIndex = 0;
+      if (direction === 'left') movingIndex = -1;
+      else if (direction === 'right') movingIndex = 1;
       let currentIndex = images.indexOf(currentArrayImg[2]);
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      currentIndex = (currentIndex + movingIndex + images.length) % images.length;
 
       const newArrayImg = [
         images[(currentIndex - 2 + images.length) % images.length],
@@ -44,32 +63,25 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
         images[(currentIndex + 1) % images.length],
         images[(currentIndex + 2) % images.length]
       ];
-      const newCurrentRepo = repos.find(repo => repo.repo === currentArrayImg[2].split('.')[0]);
+      const newCurrentRepo = repos.find(repo => {
+        /* converting path in th name of the image */
+        const currentImageName: string = parsePathtoImageName(newArrayImg[2]);
+
+        return repo.repo === currentImageName;
+      });
       setCurrentArrayImg(newArrayImg);
       setCurrentRepo(newCurrentRepo? newCurrentRepo: defaultCurrentRepo);
       setSliderMoveClass('');
     }, 490);
   };
+
+  const handleBtnLeft = (e: React.MouseEvent) => {
+    e.preventDefault();
+    moveCarousel('left');
+  };
   const handleBtnRight = (e: React.MouseEvent) => {
     e.preventDefault();
-    setSliderMoveClass('move-right');
-    setTimeout(() => {
-      let currentIndex = images.indexOf(currentArrayImg[2]);
-      currentIndex = (currentIndex + 1 + images.length) % images.length;
-    
-      const newArrayImg = [
-        images[(currentIndex - 2 + images.length) % images.length],
-        images[(currentIndex - 1 + images.length) % images.length],
-        images[currentIndex],
-        images[(currentIndex + 1) % images.length],
-        images[(currentIndex + 2) % images.length]
-      ];
-      const newCurrentRepo = repos.find(repo => repo.repo === currentArrayImg[2].split('.')[0]);
-      setCurrentArrayImg(newArrayImg);
-      setCurrentRepo(newCurrentRepo? newCurrentRepo: defaultCurrentRepo)
-      setSliderMoveClass('');
-
-    }, 490);
+    moveCarousel('right');
   };
 
   const [darkWidth, setDarkWidth] = useState<number>(0);
@@ -84,10 +96,15 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
     
       onChangeSliderSize.observe(sliderContainer);
 
-      const newCurrentRepo = repos.find(repo => repo.repo === currentArrayImg[2].split('.')[0]);
+      const newCurrentRepo = repos.find(repo => {
+        /* converting path in th name of the image */
+        const currentImageName: string = parsePathtoImageName(currentArrayImg[2]);
+
+        return repo.repo === currentImageName;
+      });
       setCurrentRepo(newCurrentRepo? newCurrentRepo: defaultCurrentRepo);
     }
-  });
+  }, []);
 
   return (
     <>
@@ -98,7 +115,7 @@ const ProjectCarousel = ({images, path, repos}: CarouselProps) => {
           <div className={`slider ${sliderMoveClass}`.trim()}>
             {currentArrayImg.map((image, index) => (
               <div key={`${index}-${image}`} className="image-container">
-                <img src={`${path}/${image}`} alt={`${index}-${image}`} />
+                <img src={image} alt={`${index}-${image}`} />
               </div>
             ))}
           </div>

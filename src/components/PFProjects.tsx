@@ -36,7 +36,7 @@ const PFProjects = () => {
       (
         <>
         <h1 className="text-color1">{tP("projects")}</h1>
-        <ProjectCarousel images={dataProjects} path={'./src/images/projects'} repos={pinnedRepos}/>
+        <ProjectCarousel images={dataProjects} repos={pinnedRepos}/>
         </>
       ))
     }
